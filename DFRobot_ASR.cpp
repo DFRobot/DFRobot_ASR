@@ -1,13 +1,12 @@
 /*!
-   @file DFRobot_ASR.h
-   @brief DFRobot_ASR 类的基础结构，基础方法的实现
-   @copyright   Copyright (c) 2010 DFRobot Co.Ltd (http://www.dfrobot.com)
-   @licence     The MIT License (MIT)
-   @author [fengli](li.feng@dfrobot.com)
-   @version  V1.0
-   @date  2020-08-17
-   @get from https://www.dfrobot.com
-   @https://github.com/DFRobot/DFRobot_ASR
+ * @file DFRobot_ASR.cpp
+ * @brief DFRobot_ASR 类的基础方法的实现
+ * @copyright   Copyright (c) 2010 DFRobot Co.Ltd (http://www.dfrobot.com)
+ * @license     The MIT License (MIT)
+ * @author [fengli](li.feng@dfrobot.com)
+ * @version  V1.0
+ * @date  2020-08-17
+ * @https://github.com/DFRobot/DFRobot_ASR
 */
 #include "DFRobot_ASR.h"
 DFRobot_ASR::DFRobot_ASR(TwoWire *pWire, uint8_t address){

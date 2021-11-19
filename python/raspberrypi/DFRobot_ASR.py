@@ -1,29 +1,35 @@
 # -*- coding: utf-8 -*
+'''!
+  @file DFRobot_ASR.py
+  @brief 语音识别模块可以识别到,预先被写入到传感器的词条,并返回对应编号
+  @copyright   Copyright (c) 2010 DFRobot Co.Ltd (http://www.dfrobot.com)
+  @license     The MIT license (MIT)
+  @author [fengli](li.feng@dfrobot.com)
+  @version  V1.0
+  @date  2020-08-17
+  @https://github.com/DFRobot/DFRobot_ASR
+'''
 import serial
 import time
 import smbus
-                
-
+               
 class DFRobot_ASR(object):
-
-
-  
   ''' register configuration '''
   I2C_ADDR                = 0x50
-  ASR_BEGIN               = 0xA1
-  ASR_ADDCOMMAND          = 0xA2
-  ASR_ADDCOMMAND_END      = 0xA3
-  ASR_START               = 0xA4
-  ASR_LOOP                = 0xA5
-  ASR_BUTTON              = 0xA7
-  ASR_PASSWORD            = 0xA6
-  ASR_IDLE                = 0xA8
-  ASR_MIC_MODE            = 0xA9
-  ASR_MONO_MODE           = 0xAA
-  ASR_SET_IIC_ADDR        = 0xAB
-  LOOP                    = 0x01
-  PASSWORD                = 0x02
-  BUTTON                  = 0x03
+  ASR_BEGIN               = 0xA1  #模块初始化指令
+  ASR_ADDCOMMAND          = 0xA2  #开始写入词条指令
+  ASR_ADDCOMMAND_END      = 0xA3  #结束写入词条指令
+  ASR_START               = 0xA4  #识别开始指令
+  ASR_LOOP                = 0xA5  #循环模式指令
+  ASR_BUTTON              = 0xA7  #按钮模式指令
+  ASR_PASSWORD            = 0xA6  #指令模式指令
+  ASR_IDLE                = 0xA8  #空闲模式指令
+  ASR_MIC_MODE            = 0xA9  #mic模式指令
+  ASR_MONO_MODE           = 0xAA  #mono模式指令
+  ASR_SET_IIC_ADDR        = 0xAB  #设置地址指令
+  LOOP                    = 0x01  #循环模式
+  PASSWORD                = 0x02  #指令模式
+  BUTTON                  = 0x03  #按钮模式
   MIC                     = 0x04
   MONO                    = 0x05
   
@@ -38,6 +44,13 @@ class DFRobot_ASR(object):
     self.idle =    0
 
   def begin(self ,mode,miMode):
+  '''
+    @fn begin
+    @brief 初始化函数
+    @param mode 语音识别模式
+    @param miMode 麦克风模式
+    @return 返回0表示初始化成功，返回其他值表示初始化失败，返回错误码
+  '''
     self._mode = mode
     self.write_data(self.ASR_BEGIN)
     if miMode == self.MIC:
@@ -47,11 +60,23 @@ class DFRobot_ASR(object):
     time.sleep(0.05)
 
   def start(self):
+  '''
+    @fn start
+    @brief 语音模块开始识别.
+  '''
     self.write_data(self.ASR_START)
     time.sleep(0.05)
 
   def addCommand(self,words,idNum):
-    
+  '''
+    @fn addCommand
+    @brief 向模块添加词条
+    @param words 代表词条的字符串
+    @param idNum 词条的识别号
+    @return Boolean type, the result of seted
+    @retval 添加词条成功
+    @retval 添加词条失败
+  '''
     #word = str(chr(idNum))+words+str(chr(self.ASR_ADDCOMMAND_END))
     #print(word[0])
     self.write_data(self.ASR_ADDCOMMAND)
@@ -66,9 +91,12 @@ class DFRobot_ASR(object):
     #self.i2cbus.write_i2c_block_data(self._addr ,idNum ,word)
     self.write_data(self.ASR_ADDCOMMAND_END)
     
-   
-  ''' Read the result data of the register '''
   def read(self):
+  '''
+    @fn read
+    @brief 读取识别到的词条.
+    @return 返回代表词条的识别号
+  '''
     rslt = -1
     #print(self._mode)
     if self._mode == self.BUTTON:
@@ -87,8 +115,14 @@ class DFRobot_ASR(object):
     else:
        self.idle=0
        return rslt
-  ''' Modify i2c device number '''
+
+
   def setI2CAddr(self ,addr):
+  '''
+    @fn setI2CAddr
+    @brief 设置模块的i2c地址(从新上电后生效)
+    @param addr 需要设置的i2c地址(0~127)
+  '''
     if addr > 127:
         addr = 127
     self.i2cbus.write_byte_data(self._addr,self.ASR_SET_IIC_ADDR ,addr)
