@@ -14,24 +14,21 @@ I2C接口通信，兼容绝大部分主控，非常适合接入教育场景使�
 
     DFR0715：Gravity: I2C语音识别模块
 
-## Table of Contents
+## 目录
 
-* [Summary](#summary)
-* [Installation](#installation)
-* [Methods](#methods)
-* [Compatibility](#compatibility)
-* [History](#history)
-* [Credits](#credits)
-## Summary
-
-alcohol module.
-
-## Feature
+  * [概述](#概述)
+  * [库安装](#库安装)
+  * [方法](#方法)
+  * [兼容性](#兼容性)
+  * [历史](#历史)
+  * [创作者](#创作者)
+## 概述
 
   1.向语音识别模块添加词条,每一个词条会附带一个编号<br>
   2.当模块识别到添加的词条时,会返回对应的编号<br>
 
-## Installation
+
+## 库安装
 
 To use this library, please download the library file first, and paste it into the \Arduino\libraries directory, then open the examples folder and run the demo in the folder.
 
@@ -39,7 +36,7 @@ To use this library, please download the library file first, and paste it into t
 $> python speech_recognition.py
 ```
 
-## Methods
+## 方法
 
 ```python
   def begin(self ,mode,miMode):
@@ -84,7 +81,7 @@ $> python speech_recognition.py
 
 ```
 
-## Compatibility
+## 兼容性
 
 | 主板         | 通过 | 未通过 | 未测试 | 备注 |
 | ------------ | :--: | :----: | :----: | :--: |
@@ -98,10 +95,10 @@ $> python speech_recognition.py
 | ------- | :--: | :----: | :----: | ---- |
 | Python2 |  √   |        |        |      |
 | Python3 |  √   |        |        |      |
-## History
+## 历史
 
 September 9, 2020 - Version 1.0 released.
 
-## Credits
+## 创作者
 
 Written by fengli(li.feng@dfrobot.com), 2019.8.25 (Welcome to our [website](https://www.dfrobot.com/))
