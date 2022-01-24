@@ -10,23 +10,23 @@
 ![产品效果图片](./resources/images/DFR0715.png)
 
 
-## 产品链接（https://www.dfrobot.com.cn/goods-3011.html）
+## Product Link（https://www.dfrobot.com.cn/goods-3011.html）
 
     DFR0715：Gravity: I2C语音识别模块
    
-## 目录
+## Table of Contents
 
-  * [概述](#概述)
-  * [库安装](#库安装)
-  * [方法](#方法)
-  * [兼容性](#兼容性)
-  * [历史](#历史)
-  * [创作者](#创作者)
+* [Summary](#summary)
+* [Installation](#installation)
+* [Methods](#methods)
+* [Compatibility](#compatibility)
+* [History](#history)
+* [Credits](#credits)
 
-## 概述
+## Summary
   1.向语音识别模块添加词条,每一个词条会附带一个编号<br>
   2.当模块识别到添加的词条时,会返回对应的编号<br>
-## 库安装
+## Installation
 To use this library, please download the library file first, and paste it into the \Arduino\libraries directory, then open the examples folder and run the demo in the folder.
 
 ## Methods
@@ -75,7 +75,7 @@ To use this library, please download the library file first, and paste it into t
 
 ```
 
-## 兼容性
+## Compatibility
 MCU                | Work Well    | Work Wrong   | Untested    | Remarks
 ------------------ | :----------: | :----------: | :---------: | -----
 Arduino Uno        |      √       |              |             | 
@@ -91,7 +91,7 @@ Raspberry Pi      |      √       |              |             |
 
 - 2029/8/25 - Version 1.0.0 released.
 
-## 创作者
+## Credits
 
 Written by fengli(li.feng@dfrobot.com), 2019.8.25 (Welcome to our [website](https://www.dfrobot.com/))
 

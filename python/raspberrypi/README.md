@@ -10,7 +10,7 @@ I2C接口通信，兼容绝大部分主控，非常适合接入教育场景使�
 ![产品效果图片](../../resources/images/DFR0715.png)
 
 
-## 产品链接（https://www.dfrobot.com.cn/goods-3011.html）
+## Product Link（https://www.dfrobot.com.cn/goods-3011.html）
 
     DFR0715：Gravity: I2C语音识别模块
 
