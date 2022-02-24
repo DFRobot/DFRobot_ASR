@@ -1,18 +1,18 @@
 # DFRobot_ASR
 - [中文版](./README_CN.md)
 
-让声音为您的项目增添一抹特色！连接上语音识别模块，再添加几行简单的码，您的项目就可以听懂您说的话。无
-需机器学习，无需特定人语音，无需联网，随时随地都可以进行语音识别，结合语音合成模块还可以实现语音对话。
-  使用Gravity 
-I2C接口通信，兼容绝大部分主控，非常适合接入教育场景使用。三种语音识别模式和三种语音输入方式使模块可以集
-  成入更多的场景。
+Would you like to add voice to your projects? Connect up this Speech recognition module, add a few couples of lines of code, and your project will recognize what you said without requiring machine learning, specific human voice, and internet connection.
+Combining with a speech synthesis module, you can easily have conversations with your projects! 
+The module uses I2C communication mode, gravity interface, and is compatible with most main controllers on the market, making it ideal for educational scenarios.
+It provides 3 speech recognition modes and 3 voice input methods.
+
 
 ![产品效果图片](../../resources/images/DFR0715.png)
 
 
 ## Product Link（https://www.dfrobot.com.cn/goods-3011.html）
 
-    DFR0715：Gravity: I2C语音识别模块
+    DFR0715：Gravity: I2C Speech Recognition Module
 
 ## Table of Contents
 
@@ -24,12 +24,12 @@ I2C接口通信，兼容绝大部分主控，非常适合接入教育场景使�
 * [Credits](#credits)
 ## Summary
 
-alcohol module.
+Speech Recognition Module
 
 ## Feature
 
-  1.向语音识别模块添加词条,每一个词条会附带一个编号<br>
-  2.当模块识别到添加的词条时,会返回对应的编号<br>
+  1. Add words to the speech recognition module, each phrase has a number.<br>
+  2. When the module recognizes an added phrase, it returns the corresponding number.<br>
 
 ## Installation
 
@@ -45,56 +45,56 @@ $> python speech_recognition.py
   def begin(self ,mode,miMode):
   '''
     @fn begin
-    @brief 初始化函数
-    @param mode 语音识别模式
-    @param miMode 麦克风模式
-    @return 返回0表示初始化成功，返回其他值表示初始化失败，返回错误码
+    @brief Init function
+    @param mode Speech recognition mode
+    @param miMode Mic mode
+    @return Returning 0 indicates init succeeded, non-zero indicates init failed, return error code.
   '''
 
   def start(self):
   '''
     @fn start
-    @brief 语音模块开始识别.
+    @brief The speech recognition module start to recognize.
   '''
 
   def addCommand(self,words,idNum):
   '''
     @fn addCommand
-    @brief 向模块添加词条
-    @param words 代表词条的字符串
-    @param idNum 词条的识别号
-    @return Boolean type, the result of seted
-    @retval 添加词条成功
-    @retval 添加词条失败
+    @brief Add phrase to the module.
+    @param words Character strings of the phrases
+    @param idNum The id number of the phrase
+    @return Boolean type, the setting result
+    @retval Adding phrases succeeded
+    @retval Adding phrases failed
   '''
     
   def read(self):
   '''
     @fn read
-    @brief 读取识别到的词条.
-    @return 返回代表词条的识别号
+    @brief Read the recognized phrase
+    @return Return the id number of the phrase
   '''
 
   def setI2CAddr(self ,addr):
   '''
     @fn setI2CAddr
-    @brief 设置模块的i2c地址(从新上电后生效)
-    @param addr 需要设置的i2c地址(0~127)
+    @brief Set module i2c address (take effect after powering on again)
+    @param addr i2c address to be set (0-127)
   '''
 
 ```
 
 ## Compatibility
 
-| 主板         | 通过 | 未通过 | 未测试 | 备注 |
+| MCU         | Work Well | Work Wrong | Untested | Remarks |
 | ------------ | :--: | :----: | :----: | :--: |
 | RaspberryPi2 |      |        |   √    |      |
 | RaspberryPi3 |      |        |   √    |      |
 | RaspberryPi4 |  √   |        |        |      |
 
-* Python 版本
+* Python Version
 
-| Python  | 通过 | 未通过 | 未测试 | 备注 |
+| Python  | Work Well | Work Wrong | Untested | Remarks |
 | ------- | :--: | :----: | :----: | ---- |
 | Python2 |  √   |        |        |      |
 | Python3 |  √   |        |        |      |

@@ -1,6 +1,6 @@
 /*!
  * @file DFRobot_ASR.cpp
- * @brief DFRobot_ASR 类的基础方法的实现
+ * @brief The implementation of DFRobot_ASR class basic method
  * @copyright   Copyright (c) 2010 DFRobot Co.Ltd (http://www.dfrobot.com)
  * @license     The MIT License (MIT)
  * @author [fengli](li.feng@dfrobot.com)

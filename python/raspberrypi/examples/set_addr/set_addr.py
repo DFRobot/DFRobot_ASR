@@ -1,6 +1,6 @@
 """
    @file set_addr.ino
-   @brief 设置iic从机地址，最大为127，默认为0x4F
+   @brief Set i2c slave address, up to 127, default to be 0x4F
    @copyright  Copyright (c) 2010 DFRobot Co.Ltd (http://www.dfrobot.com)
    @License     The MIT License (MIT)
    @author [fengli](li.feng@dfrobot.com)
@@ -22,12 +22,12 @@ IIC_ADDRESS      = 0x4F            # default iic device address
 asr = DFRobot_ASR(IIC_MODE ,IIC_ADDRESS)
 ''' Change the device number of i2c, value range 1 to 127 '''
 """
-     @brief 初始化函数
-     @param 语音识别模式1.LOOP(循环模式)2.PASSWORD(指令模式)3.BUTTON(按钮模式)
-     @return 返回0表示初始化成功，返回其他值表示初始化失败，返回错误码
+     @brief Init function
+     @param Speech recognition mode: LOOP; PASSWORD; BUTTON
+     @return Returning 0 indicates init succeeded, non-zero indicates init failed, return error code
 """
 asr.begin(asr.ASR_LOOP,asr.MIC)
 time.sleep(0.1)
-#设置I2C地址
+#Set I2C address
 asr = asr.setI2CAddr(0x4E)
 print("The new address needs to be powered off and reconnected to take effect")
