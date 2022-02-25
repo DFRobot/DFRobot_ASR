@@ -85,7 +85,7 @@ Raspberry Pi      |      √       |              |             |
 
 ## History
 
-- 2029/8/25 - Version 1.0.0 released.
+- 2019/8/25 - Version 1.0.0 released.
 
 ## Credits
 
